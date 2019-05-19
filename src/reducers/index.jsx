@@ -17,5 +17,9 @@ const mockTasks = [
 
 // set mockTasks as default state
 export const tasks = (state = { tasks: mockTasks }, action) => {
+  switch (action.type) {
+    case 'CREATE_TASK':
+      return { tasks: [...state.tasks, action.payload] }
+  }
   return state
 }
